@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Local File Share</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Local File Share</h1>
+      <div class="muted">
+        Open this page on your PC and phone using the same Wi-Fi.
+        Upload files here and download them from the other device.
+      </div>
+      <div class="muted" style="margin-top:8px;">
+        PC IP: <b>http://192.168.1.28:5000</b>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0;">Send files or a folder</h2>
+      <input id="files" type="file" multiple>
+      <div id="drop" class="drop">Drag and drop files here</div>
+      <div class="row">
+        <button onclick="uploadFiles()">Upload</button>
+        <button class="secondary" onclick="refreshList()">Refresh list</button>
+        <button class="danger" onclick="deleteSelected()">Delete Selected</button>
+        <button class="danger" onclick="deleteAllFiles()">Delete All</button>
+      </div>
+      <div class="row" style="margin-top:10px;">
+        <label class="muted">
+          <input type="checkbox" id="selectAll" onchange="toggleSelectAll(this)">
+          Select All
+        </label>
+      </div>
+      <div id="msg"></div>
+    </div>
+
+    <div class="card">
+      <h2 style="margin-top:0;">Shared files</h2>
+      <ul id="list"></ul>
+    </div>
+  </div>
+
+  <div id="previewModal" class="modal hidden" onclick="closePreview(event)">
+    <div class="modal-box">
+      <div class="modal-top">
+        <div id="previewTitle" class="modal-title"></div>
+        <button class="secondary" onclick="closePreview()">Close</button>
+      </div>
+      <div id="previewBody" class="preview-body"></div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
