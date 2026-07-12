@@ -3,21 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Local File Share</title>
+  <title>WiFi File Share</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <div class="wrap">
     <div class="card">
-      <h1>Local File Share</h1>
+      <h1>WiFi File Share</h1>
       <div class="muted">
-        Open this page on your PC and phone using the same Wi-Fi.
-        Upload files here and download them from the other device.
+  Share files instantly between devices connected to the same Wi-Fi or Local Network.
+  Upload files from any device and download them securely through your browser.
       </div>
-      <div class="muted" style="margin-top:8px;">
-        PC IP: <b>http://192.168.1.28:5000</b>
+        <code>http://YOUR-PC-IP:5000</code>
       </div>
-    </div>
 
     <div class="card">
       <h2 style="margin-top:0;">Send files or a folder</h2>
@@ -55,5 +53,10 @@
   </div>
 
   <script src="{{ url_for('static', filename='app.js') }}"></script>
+  <footer class="footer">
+  <p>
+    Made with ❤️ using Python & Flask • Open Source on GitHub
+  </p>
+</footer>
 </body>
 </html>
